@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>Mia's Word</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Mia's Word</h1>
+  </header>
+
+  <main class="main">
+    <p id="hint" class="hint">Enter the password to begin</p>
+    <div class="board-wrap">
+      <div id="board" class="board" role="grid" aria-label="Game board"></div>
+    </div>
+  </main>
+
+  <div id="keyboard" class="keyboard" aria-label="Keyboard"></div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <div id="victory" class="victory" aria-hidden="true">
+    <p class="victory-lead">Good job, the word is</p>
+    <span id="victory-word" class="victory-word"></span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
