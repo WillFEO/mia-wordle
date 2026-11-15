@@ -2,7 +2,8 @@
   --bg: #ffffff;
   --text: #1a1a1b;
   --border: #d3d6da;
-  --border-filled: #878a8c;
+  --tile-border: #a4a7ab;
+  --border-filled: #565758;
   --key: #d3d6da;
   --key-text: #1a1a1b;
   --correct: #6aaa64;
@@ -109,14 +110,14 @@ body {
 }
 
 .row.locked {
-  opacity: 0.3;
+  opacity: 0.45;
 }
 
 .tile {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--border);
+  border: 2px solid var(--tile-border);
   font-size: calc(100cqw / var(--cols) * 0.5);
   font-weight: 700;
   line-height: 1;
