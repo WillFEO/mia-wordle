@@ -18,6 +18,11 @@
     console.warn('Password and answer should be the same length.');
   }
 
+  // Allowed guesses: the bundled word list plus the password and answer.
+  const WORDS = new Set((window.WORDS || '').split(' ').filter((w) => w.length === COLS));
+  WORDS.add(PASSWORD);
+  WORDS.add(ANSWER);
+
   const FLIP_MS = 500;
   const STAGGER_MS = 300;
   const RANK = { absent: 1, present: 2, correct: 3 };
@@ -209,6 +214,13 @@
       clearRow(state.row);
       state.guess = '';
       state.busy = false;
+      return;
+    }
+
+    // Like the real game: invalid words shake but stay so they can be edited.
+    if (state.unlocked && !WORDS.has(state.guess)) {
+      shake(rowEl);
+      toast('Not in word list');
       return;
     }
 
